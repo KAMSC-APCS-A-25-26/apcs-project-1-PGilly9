@@ -7,7 +7,7 @@ public class TextAdventure {
     public static void main(String[] args) throws InterruptedException {
         Scanner sc = new Scanner(System.in);
         Random rand = new Random();
-        int dog = 0;
+        int dog = 0, stamina = 100;
         Boolean run = true;
 
         System.out.print("What is your first name: ");
@@ -18,6 +18,7 @@ public class TextAdventure {
             // What todo today?
 
             System.out.println("You are: Leaving the house");
+            System.out.println("Stamina: " + stamina);
             TimeUnit.SECONDS.sleep(2);
             System.out.println("Plan for today:");
             TimeUnit.SECONDS.sleep(2);
@@ -58,6 +59,8 @@ public class TextAdventure {
                     // Good outcome
                     System.out.println("newspaper, no need to fear its trying to do its civil duty.");
                     System.out.println("You pet the dog and become friends, next time it won't be this scary.");
+                    stamina += 5;
+                    System.out.println("Stamina: " + stamina);
                 } else {
                     // Bad outcome
                     System.out.println("Oh no, it's a horrible sight, it's got a foamy mouth. It must have rabies, get out!");
@@ -72,6 +75,8 @@ public class TextAdventure {
                     System.out.println(".");
                     TimeUnit.SECONDS.sleep(3);
                     System.out.println("You narrowly avoid the dog and eventually he loses you.");
+                    stamina -= 5;
+                    System.out.println("Stamina: " + stamina);
                 }
             } else {
                 // Running away
@@ -80,6 +85,8 @@ public class TextAdventure {
                 System.out.println("You make your way to the school because you now people will help you there");
                 TimeUnit.SECONDS.sleep(2);
                 System.out.println("After 2 minutes of running you look behind you and realize, the dog never saw you, you wasted all your energy and now you are all sweaty before school even starts.");
+                stamina -= 5;
+                System.out.println("Stamina: " + stamina);
             }
             TimeUnit.MILLISECONDS.sleep(2500);
             System.out.println("\nContinue heading to school");
@@ -126,7 +133,7 @@ public class TextAdventure {
                 System.out.println("Billy is one of the best in the school so you challenge yourself and have to go for gold.");
                 TimeUnit.SECONDS.sleep(2);
                 System.out.println("Right?\n1. compete\n2. be weak");
-                System.out.print("Pick one:");
+                System.out.print("Pick one: ");
 
                 int comp = sc.nextInt();
                 // Wrong number, and not what we want
@@ -159,10 +166,14 @@ public class TextAdventure {
                         System.out.println("WINNER WINNER CHICKEN DINNER!!!");
                         TimeUnit.SECONDS.sleep(2);
                         System.out.println("This means the world to you, and your day is flying");
+                        stamina += 5;
+                        System.out.println("Stamina: " + stamina);
                     } else {
                         System.out.println(" brick the ball so hard, you lose by 1 lonesome point");
                         TimeUnit.SECONDS.sleep(2);
                         System.out.println("Whatever, it's not the end of the day, but it stings");
+                        stamina -= 5;
+                        System.out.println("Stamina: " + stamina);
                     }
                 }
             } else if (sport == 2) {
@@ -174,7 +185,7 @@ public class TextAdventure {
                 System.out.println("Billy is one of the best in the school so you challenge yourself and have to go for gold.");
                 TimeUnit.MILLISECONDS.sleep(1500);
                 System.out.println("Right?\n1. compete\n2. be weak");
-                System.out.print("Pick one:");
+                System.out.print("Pick one: ");
 
                 int comp = sc.nextInt();
                 // Wrong number, and not what we want
@@ -206,10 +217,14 @@ public class TextAdventure {
                         System.out.println("WINNER WINNER CHICKEN DINNER!!!");
                         TimeUnit.MILLISECONDS.sleep(1500);
                         System.out.println("This means the world to you, and your day is flying");
+                        stamina += 5;
+                        System.out.println("Stamina: " + stamina);
                     } else {
                         System.out.println(" brick the ball so hard, you lose by 1 lonesome point");
                         TimeUnit.MILLISECONDS.sleep(1500);
                         System.out.println("Whatever, it's not the end of the day, but it stings");
+                        stamina -= 5;
+                        System.out.println("Stamina: " + stamina);
                     }
                 }
             } else if (sport == 3) {
@@ -224,7 +239,7 @@ public class TextAdventure {
                 System.out.println("Billy is one of the best in the school so you challenge yourself and have to go for gold.");
                 TimeUnit.MILLISECONDS.sleep(1500);
                 System.out.println("Right?\n1. compete\n2. be weak");
-                System.out.print("Pick one:");
+                System.out.print("Pick one: ");
 
                 int comp = sc.nextInt();
                 // Dealing with a wrong number
@@ -256,10 +271,14 @@ public class TextAdventure {
                         System.out.println("WINNER WINNER CHICKEN DINNER!!!");
                         TimeUnit.MILLISECONDS.sleep(1500);
                         System.out.println("This means the world to you, and your day is flying");
+                        stamina += 5;
+                        System.out.println("Stamina: " + stamina);
                     } else {
                         System.out.println(" brick the ball so hard, you lose by 1 lonesome point");
                         TimeUnit.MILLISECONDS.sleep(1500);
                         System.out.println("Whatever, it's not the end of the day, but it stings");
+                        stamina -= 5;
+                        System.out.println("Stamina: " + stamina);
                     }
                 }
             }
@@ -290,6 +309,8 @@ public class TextAdventure {
                 System.out.println("You grab a piece of bread and throw it yelling \"FOOD FIGHT\"");
                 TimeUnit.MILLISECONDS.sleep(1500);
                 System.out.println("You end up being the only one interested, an before you know it the staff have you in the main office, expecting a lunch detention for tomorrow.");
+                stamina -= 10;
+                System.out.println("Stamina: " + stamina);
             } else {
                 TimeUnit.MILLISECONDS.sleep(1500);
                 System.out.println("You grab a piece of bread and eat it, it tastes just ok, but after a boring day, anything goes");
@@ -365,6 +386,8 @@ public class TextAdventure {
                 // If 12
                 if (health < 7) {
                     TimeUnit.SECONDS.sleep(2);
+                    stamina -= 15;
+                    System.out.println("Stamina: " + stamina);
                     System.out.println("You are ok, you can up and leave, sorry about your wallet.");
                     System.out.println("You look around for a nurse\nYou find one and call her over to ask if you can go, after all you still got plans to attend to.");
                     TimeUnit.SECONDS.sleep(2);
@@ -408,6 +431,7 @@ public class TextAdventure {
                         System.out.println("Well I don't want to spell it out for you but");
                         TimeUnit.MILLISECONDS.sleep(1500);
                         System.out.println("Goodbye World!");
+                        stamina = 0;
 
                     } else {
                         TimeUnit.MILLISECONDS.sleep(1500);
@@ -450,6 +474,8 @@ public class TextAdventure {
                             System.out.println("\nLike clockwork all 8 of you turn an take on the face the 5 of them, and wipe them on their feet");
                             TimeUnit.SECONDS.sleep(2);
                             System.out.println("None of you saw this coming so you cheer");
+                            stamina -= 10;
+                            System.out.println("Stamina: " + stamina);
                             TimeUnit.SECONDS.sleep(2);
                             System.out.println("All of a sudden you realise you have bigger problems: \"WOOP WOOP\", the police");
                             TimeUnit.SECONDS.sleep(2);
@@ -569,6 +595,7 @@ public class TextAdventure {
                     System.out.println("\"And all this for what, a WALMART?\" you ask yourself");
                     TimeUnit.SECONDS.sleep(2);
                     System.out.println("You will be missed");
+                    stamina = 1;
                 }
             } else {
                 TimeUnit.SECONDS.sleep(2);
@@ -621,6 +648,8 @@ public class TextAdventure {
                 System.out.println("You end up in the hospital when you wake up.");
                 if (health < 7) {
                     TimeUnit.SECONDS.sleep(2);
+                    stamina -= 15;
+                    System.out.println("Stamina: " + stamina);
                     System.out.println("You are ok, you can up and leave, sorry about your wallet.");
                     System.out.println("You look around for a nurse\nYou find one and call her over to ask if you can go, after all you still got plans to attend to.");
                     TimeUnit.SECONDS.sleep(4);
@@ -687,6 +716,8 @@ public class TextAdventure {
                         TimeUnit.SECONDS.sleep(2);
                         System.out.println("None of you saw this coming so you cheer");
                         TimeUnit.SECONDS.sleep(2);
+                        stamina -= 10;
+                        System.out.println("Stamina: " + stamina);
                         System.out.println("All of a sudden you realise you have bigger problems: \"WOOP WOOP\", the police");
                         TimeUnit.SECONDS.sleep(2);
                         System.out.println("1. run 2. hide or 3. turn yourself in");
@@ -720,7 +751,7 @@ public class TextAdventure {
                             TimeUnit.SECONDS.sleep(2);
                             System.out.println("\"We know it was self-defense, you are free to leave\"");
                             TimeUnit.SECONDS.sleep(2);
-                            System.out.println("You go home.");
+                            System.out.println("\n\nYou go home.");
                         }
 
                     }
@@ -732,7 +763,7 @@ public class TextAdventure {
                     System.out.println("\"What instrument should I play today?\" you ask yourself.");
                     TimeUnit.SECONDS.sleep(2);
                     // List of instruments.
-                    System.out.println("Instruments:");
+                    System.out.println("\nInstruments:");
                     TimeUnit.SECONDS.sleep(2);
                     System.out.println("1. saxophone");
                     TimeUnit.SECONDS.sleep(2);
@@ -786,7 +817,7 @@ public class TextAdventure {
                     }
                     //ending 3
                     TimeUnit.SECONDS.sleep(2);
-                    System.out.print("Time for bed.");
+                    System.out.println("\nTime for bed.");
                     TimeUnit.SECONDS.sleep(2);
                     System.out.println("GoodNight!");
                 } else {
@@ -800,15 +831,18 @@ public class TextAdventure {
                     System.out.println("\"And all this for what, a MALL?\" you ask yourself");
                     TimeUnit.SECONDS.sleep(2);
                     System.out.println("You will be missed");
+                    stamina = 1;
                 }
             }
 
-            System.out.println("Play again?\n1. YES!\n2. No thanks");
+            System.out.println("Stamina: " + stamina);
+
+            System.out.println("\nPlay again?\n1. YES!\n2. No thanks");
             System.out.print("Please enter a choice:  ");
             int game  = sc.nextInt();
             while (game < 1 || game > 2) {
                     System.out.println("\nONE, OR TWO, COMMON NOW");
-                    System.out.print("Please enter a choice:  ");
+                    System.out.print("Please enter a choice: ");
                     game = sc.nextInt();
             }
             if (game == 1) {
